@@ -7,18 +7,19 @@
 // • 1.28611 $ es un 1 €
 // • 129.852 yenes es un 1 €
 
+// Creo las variables que se utilizarán en el programa
 let amount = 0;
 let currency = 0;
-
+// Pido la cantidad a cambiar
 amount = prompt("Introduce la cantidad de euros a convertir: ");
 
 do {
-
+// Pido que me den el tipo de cambio, hasta que pongan un número del 1-3
     currency = prompt("¿A qué divisa quieres hacer el cambio?\n1. libras\t2. dólares\t3.yenes");
 
 } while ((currency<1)||(currency>3));
-
-moneyChange = (newAmount, newCurrency) => {
+// Creo la función que hará y mostrará el cambio
+const moneyChange = (newAmount, newCurrency) => {
 
     switch (newCurrency) {
         case 1:
@@ -32,5 +33,5 @@ moneyChange = (newAmount, newCurrency) => {
             break;
     }
 }
-
+// Llamo a la función, pasándole los parámetros convertidos a número
 moneyChange(+amount,+currency);
