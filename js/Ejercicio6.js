@@ -2,21 +2,20 @@
 // (hay que controlarlo) pedido por prompt. Crea un método que realice esta acción, 
 // pasando el número por parámetro devolverá el número de cifras.
 
+let number = 0;
 
 const compruebaEntrega = () => {
 
+    let number = 0;
+
     // do-while para controlar que el número que introduce el usuario es positivo
     do {
-        // Creo la variable ispositive que controla si es positivo
-        let isPositive = false;
-        let number = prompt("Dame un número: ");
 
-        if(number > 0)
-        {
-            isPositive = true;
-        }
-        // Mientras ispositive siga siendo falso, sigue dando vueltas
-    } while (isPositive == false);
+        number = prompt("Dame un número positivo: ");
+
+    } while (number<=0);
+
+    return number;
 }
 
 const amountNumbers = (newNumber) => {
@@ -24,6 +23,8 @@ const amountNumbers = (newNumber) => {
     let digits = 0;
 
     digits = newNumber.length;
+    alert(newNumber+" tiene "+digits+" cifras");
 }
 
-compruebaEntrega();
+number = compruebaEntrega();
+amountNumbers(number);
